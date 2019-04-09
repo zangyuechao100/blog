@@ -2,3 +2,8 @@
 
 
 <em>此文仅记录本人阅读《JavaScript设计模式与开发实践》的知识点，感谢作者曾探大大写出这么好的一本书。如有冒犯，请联系本人：markcoder@outlook.com处理，请大家购买正版书籍。</em>
+
+<h1>目录</h1>
+<p>1.单例模式：https://github.com/zangyuechao100/blog/blob/master/Javascript%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/1.%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F.md</p>
+<p>2.策略模式：https://github.com/zangyuechao100/blog/blob/master/Javascript%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/2.%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F.md</p>
+<p>3.代理模式：https://github.com/zangyuechao100/blog/blob/master/Javascript%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/3.%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F.md</p>
