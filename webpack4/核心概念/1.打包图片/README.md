@@ -57,3 +57,11 @@ options中，[name]代表源文件名称，[ext]代表源文件后缀，这样�
 ![](https://user-gold-cdn.xitu.io/2019/4/10/16a07d50d907db6e?w=185&h=51&f=png&s=1208)
 <br>
 这时候图片已经被打包到images文件夹中。
+<h1>4.url-loader</h1>
+提到 <font background=#fff5f5 color=#ff502c>file-loader</font> 就会想到 <font background=#fff5f5 color=#ff502c>url-loader</font> ，<font background=#fff5f5 color=#ff502c>url-loader</font>可以实现 <font background=#fff5f5 color=#ff502c>file-loader</font> 的功能，那他们有什么区别呢?
+
+![](https://user-gold-cdn.xitu.io/2019/4/10/16a07dd9813441fa?w=463&h=388&f=png&s=15483)
+<br>
+区别在于 <font background=#fff5f5 color=#ff502c>url-loader</font> 会把图片转为base64，而不是单独打包出一张图片。
+<br>
+好处是图片打包在js文件中，页面不需要额外发送一次http请求，而缺点是如果图片很大的话，js文件就会很大，会导致js加载变慢，页面出现空白的情况。所以当图片比较小的时候适合用 <font background=#fff5f5 color=#ff502c>url-loader</font>。
