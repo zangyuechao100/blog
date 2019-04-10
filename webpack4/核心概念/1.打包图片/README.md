@@ -26,15 +26,18 @@
 这时候我们就需要去loader中添加一些额外的配置了。
 
 ![](https://user-gold-cdn.xitu.io/2019/4/10/16a07c8014ec11b8?w=383&h=354&f=png&s=11381)
+<br>
 options中，[name]代表源文件名称，[ext]代表源文件后缀，这样打包出来的文件就和原来的文件名称相同了。
 
 ![](https://user-gold-cdn.xitu.io/2019/4/10/16a07c8de3c829c1?w=157&h=34&f=png&s=948)
+<br>
 这种配置的语法叫做placeholder，也叫占位符。占位符的种类还有很多，比如[hash]等，具体可以去看webpack的官网(https://webpack.js.org/loaders/file-loader/#placeholders)。
 <br>
 <br>
 我们可以再给图片加一个hash值。
 
 ![](https://user-gold-cdn.xitu.io/2019/4/10/16a07ccc748724d7?w=460&h=361&f=png&s=12322)
+<br>
 运行webpack打包后的结果
 
 ![](https://user-gold-cdn.xitu.io/2019/4/10/16a07cd4511cfaf6?w=174&h=37&f=png&s=1310)
