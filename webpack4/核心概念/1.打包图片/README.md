@@ -64,4 +64,14 @@ options中，[name]代表源文件名称，[ext]代表源文件后缀，这样�
 <br>
 区别在于 <font background=#fff5f5 color=#ff502c>url-loader</font> 会把图片转为base64，而不是单独打包出一张图片。
 <br>
-好处是图片打包在js文件中，页面不需要额外发送一次http请求，而缺点是如果图片很大的话，js文件就会很大，会导致js加载变慢，页面出现空白的情况。所以当图片比较小的时候适合用 <font background=#fff5f5 color=#ff502c>url-loader</font>。 
+<br>
+好处是图片打包在js文件中，页面不需要额外发送一次http请求，而缺点是如果图片很大的话，js文件就会很大，会导致js加载变慢，页面出现空白的情况。所以当图片比较小的时候适合用 <font background=#fff5f5 color=#ff502c>url-loader</font>。
+<br>
+<br>
+<h1>5.url-loader最佳实践</h1>
+
+![](https://user-gold-cdn.xitu.io/2019/4/11/16a0c7467731b8da?w=411&h=359&f=png&s=12538)
+<br>
+意思是如果图片超过204800个字节（200kb），就使用和<font background=#fff5f5 color=#ff502c>file-loader</font>相同的方式进行打包。
+<br>
+如果图片小于204800个字节（200kb），就使用base64方式进行打包。
