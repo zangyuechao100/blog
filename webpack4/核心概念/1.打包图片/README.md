@@ -18,7 +18,7 @@
 <font background=#fff5f5 color=#ff502c>file-loader</font>会自动打包处理jpg文件，并且放到输出的目录中。
 <br>
 <br>
-注：console.log的结果就是打包后图片的名称。
+注：console.log的结果就是打包后图片的相对路径。
 <h1>2.打包图片名称</h1>
 如果我们想要让打包出来的图片名称和引入名称相同，要怎么做呢？
 <br>
