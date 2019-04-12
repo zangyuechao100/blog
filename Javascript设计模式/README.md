@@ -7,3 +7,4 @@
 <p>1.单例模式：https://github.com/zangyuechao100/blog/blob/master/Javascript设计模式/1.单例模式.md</p>
 <p>2.策略模式：https://github.com/zangyuechao100/blog/blob/master/Javascript设计模式/2.策略模式.md</p>
 <p>3.代理模式：https://github.com/zangyuechao100/blog/blob/master/Javascript设计模式/3.代理模式.md</p>
+<p>4.迭代器模式：https://github.com/zangyuechao100/blog/blob/master/Javascript设计模式/4.迭代器模式.md</p>
