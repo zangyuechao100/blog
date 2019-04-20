@@ -9,3 +9,4 @@
 <p>3.代理模式：https://github.com/zangyuechao100/blog/blob/master/Javascript设计模式/3.代理模式.md</p>
 <p>4.迭代器模式：https://github.com/zangyuechao100/blog/blob/master/Javascript设计模式/4.迭代器模式.md</p>
 <p>5.发布-订阅模式：https://github.com/zangyuechao100/blog/blob/master/Javascript设计模式/5.发布-订阅模式.md</p>
+<p>6.命令模式：https://github.com/zangyuechao100/blog/blob/master/Javascript设计模式/6.命令模式.md</p>
