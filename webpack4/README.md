@@ -13,5 +13,6 @@
 
 4.使用plugins便捷打包：https://github.com/zangyuechao100/blog/tree/master/webpack4/%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5/4.%E4%BD%BF%E7%94%A8plugins%E4%BE%BF%E6%8D%B7%E6%89%93%E5%8C%85
 
-
 5.sourceMap：https://github.com/zangyuechao100/blog/tree/master/webpack4/%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5/5.sourceMap
+
+6.使用webpack提升效率: https://github.com/zangyuechao100/blog/tree/master/webpack4/%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5/6.%E4%BD%BF%E7%94%A8webpack%E6%8F%90%E5%8D%87%E6%95%88%E7%8E%87
