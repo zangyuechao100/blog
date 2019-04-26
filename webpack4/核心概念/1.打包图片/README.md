@@ -71,6 +71,7 @@ options中，[name]代表源文件名称，[ext]代表源文件后缀，这样�
 <h1>5.url-loader最佳实践</h1>
 
 ![](https://user-gold-cdn.xitu.io/2019/4/11/16a0c7467731b8da?w=411&h=359&f=png&s=12538)
+
 <br>
 意思是如果图片超过204800个字节（200kb），就使用和<font background=#fff5f5 color=#ff502c>file-loader</font>相同的方式进行打包。
 <br>
