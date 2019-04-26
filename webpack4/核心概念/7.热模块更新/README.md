@@ -28,7 +28,9 @@
 
 <p>这里注意如果利用webpack-dev-server cli 并且加了--hot 这个选项，就不要在这里加入new webpack.HotModuleReplacementPlugin()这个插件了，否则会报Maximum call stack size exceeded错误。</p>
 
-<p>不止是css变化会更新，js变化也是可以更新的。</p>
+<p>这时，我们改变css的背景颜色，页面不会刷新后再发生变化，而是不用重新渲染就展现效果。</p>
+
+<p>不仅可以应用于css，js变化也是可以更新的。</p>
 
 <p>我们创建两个js，在index中引入。</p>
 
