@@ -11,6 +11,7 @@
 ![](https://user-gold-cdn.xitu.io/2019/4/15/16a211a9035ef07b?w=605&h=223&f=png&s=18288)
 
 ![](https://user-gold-cdn.xitu.io/2019/4/15/16a211de3c347323?w=479&h=486&f=png&s=20869)
+
 <br>
 <h2>1.2 引入scss样式文件</h2>
 
@@ -19,6 +20,7 @@
 
 
 ![](https://user-gold-cdn.xitu.io/2019/4/15/16a2133b8a3e5b88?w=686&h=495&f=png&s=22338)
+
 <br>
 <p>注意：使用scss要安装<font background=#fff5f5 color=#ff502c>sass-loader</font>和<font background=#fff5f5 color=#ff502c>node-sass</font>。</p>
 <h2>1.3 自动补充厂商前缀</h2>
@@ -28,6 +30,7 @@ css3属性一般都会加常上前缀，而<font background=#fff5f5 color=#ff502
 ![](https://user-gold-cdn.xitu.io/2019/4/15/16a21358d40f25c0?w=381&h=161&f=png&s=6051)
 
 ![](https://user-gold-cdn.xitu.io/2019/4/15/16a21360adeec276?w=849&h=490&f=png&s=23386)
+
 <br>
 <h1>2.loader的执行顺序</h1>
 <p>loader执行顺序是：从下到上，从右到左。</p>

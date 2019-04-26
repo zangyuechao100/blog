@@ -26,10 +26,12 @@
 这时候我们就需要去loader中添加一些额外的配置了。
 
 ![](https://user-gold-cdn.xitu.io/2019/4/10/16a07c8014ec11b8?w=383&h=354&f=png&s=11381)
+
 <br>
 options中，[name]代表源文件名称，[ext]代表源文件后缀，这样打包出来的文件就和原来的文件名称相同了。
 
 ![](https://user-gold-cdn.xitu.io/2019/4/10/16a07c8de3c829c1?w=157&h=34&f=png&s=948)
+
 <br>
 这种配置的语法叫做placeholder，也叫占位符。占位符的种类还有很多，比如[hash]等，具体可以去看webpack的官网(https://webpack.js.org/loaders/file-loader/#placeholders)。
 <br>
@@ -37,30 +39,36 @@ options中，[name]代表源文件名称，[ext]代表源文件后缀，这样�
 我们可以再给图片加一个hash值。
 
 ![](https://user-gold-cdn.xitu.io/2019/4/10/16a07ccc748724d7?w=460&h=361&f=png&s=12322)
+
 <br>
 运行webpack打包后的结果
 
 ![](https://user-gold-cdn.xitu.io/2019/4/10/16a07cd4511cfaf6?w=174&h=37&f=png&s=1310)
+
 <br>
 当然，file-loader不只可以打包jpg文件，还可以打包png等文件。
 
 ![](https://user-gold-cdn.xitu.io/2019/4/10/16a07cfab485625c?w=461&h=353&f=png&s=13255)
+
 <br>
 <h1>3.图片打包目录</h1>
 我们可以在output中配置文件打包的目录，也可以在loader的options中单独配置图片的打包目录
 
 
 ![](https://user-gold-cdn.xitu.io/2019/4/10/16a07d4a328457ab?w=491&h=380&f=png&s=15735)
+
 <br>
 运行webpack打包后的结果
 
 ![](https://user-gold-cdn.xitu.io/2019/4/10/16a07d50d907db6e?w=185&h=51&f=png&s=1208)
+
 <br>
 这时候图片已经被打包到images文件夹中。
 <h1>4.url-loader</h1>
 提到 <font background=#fff5f5 color=#ff502c>file-loader</font> 就会想到 <font background=#fff5f5 color=#ff502c>url-loader</font> ，<font background=#fff5f5 color=#ff502c>url-loader</font>可以实现 <font background=#fff5f5 color=#ff502c>file-loader</font> 的功能，那他们有什么区别呢?
 
 ![](https://user-gold-cdn.xitu.io/2019/4/10/16a07dd9813441fa?w=463&h=388&f=png&s=15483)
+
 <br>
 区别在于 <font background=#fff5f5 color=#ff502c>url-loader</font> 会把图片转为base64，而不是单独打包出一张图片。
 <br>

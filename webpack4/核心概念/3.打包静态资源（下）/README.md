@@ -22,6 +22,7 @@
 
 
 ![](https://user-gold-cdn.xitu.io/2019/4/16/16a263000a01276f?w=663&h=286&f=png&s=21765)
+
 ![](https://user-gold-cdn.xitu.io/2019/4/16/16a262efaa7f222f?w=645&h=309&f=png&s=22233)
 
 <p>现在我们在options中添加一个modules的配置项。</p>
