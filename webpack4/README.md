@@ -18,3 +18,5 @@
 6.使用webpack提升效率: https://github.com/zangyuechao100/blog/tree/master/webpack4/%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5/6.%E4%BD%BF%E7%94%A8webpack%E6%8F%90%E5%8D%87%E6%95%88%E7%8E%87
 
 7.热模块更新: https://github.com/zangyuechao100/blog/tree/master/webpack4/%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5/7.%E7%83%AD%E6%A8%A1%E5%9D%97%E6%9B%B4%E6%96%B0
+
+8.使用babel处理ES6语法: https://github.com/zangyuechao100/blog/tree/master/webpack4/%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5/8.%E4%BD%BF%E7%94%A8babel%E5%A4%84%E7%90%86ES6%E8%AF%AD%E6%B3%95
