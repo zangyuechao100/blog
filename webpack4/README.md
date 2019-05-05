@@ -24,3 +24,5 @@
 8.使用babel处理ES6语法: https://github.com/zangyuechao100/blog/tree/master/webpack4/%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5/8.%E4%BD%BF%E7%94%A8babel%E5%A4%84%E7%90%86ES6%E8%AF%AD%E6%B3%95
 
 <h2>高级概念</h2>
+
+1.Tree Shaking: https://github.com/zangyuechao100/blog/tree/master/webpack4/%E9%AB%98%E7%BA%A7%E6%A6%82%E5%BF%B5/1.Tree%20Shaking
