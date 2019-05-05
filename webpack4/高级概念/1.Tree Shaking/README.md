@@ -62,4 +62,4 @@
 <p>可是为什么minus方法还存在呢？因为在development模式下，即使用了Tree Shaking，也不会在打包文件中删除minus，避免调试的时候，因为删除了代码，导致代码行数错误。</p>
 
 
-<p>如果mode是production，Tree Shaking是自动配置好的，我们也不用配置optimization，但是package.json中的sideEffects还是需要写，并且在production模式下，没有用到的代码会被删除。</p>
+<p>如果mode是production，Tree Shaking是自动配置好的，我们也不用配置optimization，但是package.json中的sideEffects还是需要写，并且在production模式下，没有用到的代码会被删除。</p> 
