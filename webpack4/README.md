@@ -26,3 +26,5 @@
 <h2>高级概念</h2>
 
 1.Tree Shaking: https://github.com/zangyuechao100/blog/tree/master/webpack4/%E9%AB%98%E7%BA%A7%E6%A6%82%E5%BF%B5/1.Tree%20Shaking
+
+2.production与development区分打包: https://github.com/zangyuechao100/blog/tree/master/webpack4/%E9%AB%98%E7%BA%A7%E6%A6%82%E5%BF%B5/2.production%E4%B8%8Edevelopment%E5%8C%BA%E5%88%86%E6%89%93%E5%8C%85
