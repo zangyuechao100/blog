@@ -12,3 +12,4 @@
 <p>6.命令模式：https://github.com/zangyuechao100/blog/blob/master/Javascript设计模式/6.命令模式.md</p>
 <p>7.组合模式：https://github.com/zangyuechao100/blog/blob/master/Javascript设计模式/7.组合模式.md</p>
 <p>8.模板方法模式：https://github.com/zangyuechao100/blog/blob/master/Javascript设计模式/8.模板方法模式.md</p>
+<p>9.享元模式：https://github.com/zangyuechao100/blog/blob/master/Javascript设计模式/9.享元模式.md</p>
