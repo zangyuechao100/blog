@@ -79,5 +79,5 @@
 
 ![](https://user-gold-cdn.xitu.io/2019/5/7/16a9249fdee84259?w=262&h=120&f=png&s=2864)
 
-
+ 
 <p>这时，lodash的代码都在0.js中，所以webpack不仅能分割同步引入的代码，还可以分割异步引入的代码。</p>
