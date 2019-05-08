@@ -32,3 +32,5 @@
 3.Code Splitting: https://github.com/zangyuechao100/blog/tree/master/webpack4/%E9%AB%98%E7%BA%A7%E6%A6%82%E5%BF%B5/3.Code%20Splitting
 
 4.splitChunksPlugin: https://github.com/zangyuechao100/blog/tree/master/webpack4/%E9%AB%98%E7%BA%A7%E6%A6%82%E5%BF%B5/4.splitChunksPlugin
+
+5.Lazy Loading懒加载与Chunk：https://github.com/zangyuechao100/blog/tree/master/webpack4/%E9%AB%98%E7%BA%A7%E6%A6%82%E5%BF%B5/5.Lazy%20Loading%E6%87%92%E5%8A%A0%E8%BD%BD%E4%B8%8EChunk
