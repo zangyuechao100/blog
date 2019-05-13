@@ -38,3 +38,5 @@
 6.打包分析,Preloading,Prefetching：https://github.com/zangyuechao100/blog/tree/master/webpack4/%E9%AB%98%E7%BA%A7%E6%A6%82%E5%BF%B5/6.%E6%89%93%E5%8C%85%E5%88%86%E6%9E%90%2CPreloading%2CPrefetching
 
 7.CSS文件代码分割：https://github.com/zangyuechao100/blog/tree/master/webpack4/%E9%AB%98%E7%BA%A7%E6%A6%82%E5%BF%B5/7.CSS%E6%96%87%E4%BB%B6%E4%BB%A3%E7%A0%81%E5%88%86%E5%89%B2
+
+8.webpack与浏览器缓存：https://github.com/zangyuechao100/blog/tree/master/webpack4/%E9%AB%98%E7%BA%A7%E6%A6%82%E5%BF%B5/8.webpack%E4%B8%8E%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98
