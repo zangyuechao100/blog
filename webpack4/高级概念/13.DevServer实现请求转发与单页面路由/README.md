@@ -80,3 +80,26 @@
 
 <p>注：webpack devServer只在开发环境中生效，在线上时不会有任何效果。</p>
 
+
+<h1>4.单页面路由</h1>
+
+<p>我们开发单页面应用的时候，配置完路由后，进入/list页面，有时候会遇到cannot GET /list情况，这是为什么呢？因为服务器以为我们要访问后端list页面，所以就会提示我们页面不存在，那么要怎么解决呢？</p>
+
+<p>我们要在devServer中配置一个配置项。</p>
+
+
+![](https://user-gold-cdn.xitu.io/2019/5/20/16ad5b367278b051?w=359&h=265&f=png&s=11004)
+
+
+<p>原理是配置完后，现在无论访问服务器的任何一个路径，都会把请求转换为对根路径的请求，即index.html</p>
+
+
+<p>historyApiFallback还可以配置为一个对象。</p>
+
+
+![](https://user-gold-cdn.xitu.io/2019/5/20/16ad5b77049c6cb7?w=328&h=388&f=png&s=15914)
+
+
+<p>意思是，如果访问abc.html，就代理到list.html。</p>
+
+<p>当代码上线后，devServer就不好用了，所以需要后端小伙伴仿照historyApiFallback修改配置。</p>
