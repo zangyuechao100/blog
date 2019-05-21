@@ -50,3 +50,5 @@
 12.PWA打包配置：https://github.com/zangyuechao100/blog/tree/master/webpack4/%E9%AB%98%E7%BA%A7%E6%A6%82%E5%BF%B5/12.PWA%E6%89%93%E5%8C%85%E9%85%8D%E7%BD%AE
 
 13.DevServer实现请求转发与单页面路由：https://github.com/zangyuechao100/blog/tree/master/webpack4/%E9%AB%98%E7%BA%A7%E6%A6%82%E5%BF%B5/13.DevServer%E5%AE%9E%E7%8E%B0%E8%AF%B7%E6%B1%82%E8%BD%AC%E5%8F%91%E4%B8%8E%E5%8D%95%E9%A1%B5%E9%9D%A2%E8%B7%AF%E7%94%B1
+
+14.配置EsLint：https://github.com/zangyuechao100/blog/tree/master/webpack4/%E9%AB%98%E7%BA%A7%E6%A6%82%E5%BF%B5/14.%E9%85%8D%E7%BD%AEEsLint
