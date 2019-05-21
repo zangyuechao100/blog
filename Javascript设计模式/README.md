@@ -14,3 +14,4 @@
 <p>8.模板方法模式：https://github.com/zangyuechao100/blog/blob/master/Javascript设计模式/8.模板方法模式.md</p>
 <p>9.享元模式：https://github.com/zangyuechao100/blog/blob/master/Javascript设计模式/9.享元模式.md</p>
 <p>10.职责链模式：https://github.com/zangyuechao100/blog/blob/master/Javascript设计模式/10.职责链模式.md</p>
+<p>11.中介者模式：https://github.com/zangyuechao100/blog/blob/master/Javascript设计模式/11.中介者模式.md</p>
