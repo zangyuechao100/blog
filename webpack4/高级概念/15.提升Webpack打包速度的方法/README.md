@@ -290,7 +290,7 @@ plugins: [
     })
 ]
 ```
-
+ 
 <h1>8.sourceMap</h1>
 
 <p>结合之前的sourceMap文章，在不同环境用不同的sourceMap打包。</p>
