@@ -54,3 +54,5 @@
 14.配置EsLint：https://github.com/zangyuechao100/blog/tree/master/webpack4/%E9%AB%98%E7%BA%A7%E6%A6%82%E5%BF%B5/14.%E9%85%8D%E7%BD%AEEsLint
 
 15.提升Webpack打包速度的方法：https://github.com/zangyuechao100/blog/tree/master/webpack4/%E9%AB%98%E7%BA%A7%E6%A6%82%E5%BF%B5/15.%E6%8F%90%E5%8D%87Webpack%E6%89%93%E5%8C%85%E9%80%9F%E5%BA%A6%E7%9A%84%E6%96%B9%E6%B3%95
+
+16.多页面应用打包：https://github.com/zangyuechao100/blog/tree/master/webpack4/%E9%AB%98%E7%BA%A7%E6%A6%82%E5%BF%B5/16.%E5%A4%9A%E9%A1%B5%E9%9D%A2%E5%BA%94%E7%94%A8%E6%89%93%E5%8C%85
