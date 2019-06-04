@@ -44,3 +44,11 @@ module.exports = configs
 
 
 <p>获取有几个入口文件，不同入口文件创建对应的html文件，引入对应的js。</p>
+
+<p>然后把plugins放到configs中。</p>
+ 
+```
+configs.plugins = makePlugins(configs);
+```
+
+<p>这样如果需要增加页面，只需要增加js即可，不需要手动再去增加配置了。</p>
