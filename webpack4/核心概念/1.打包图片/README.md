@@ -5,19 +5,19 @@
 <p>熟悉webpack配置的前端都知道，loader是webpack用来处理非js文件的，现在我们要在js文件中引入一张图片。</p>
 
 
-![](http://psmdxhpp9.bkt.clouddn.com//webpack1/blog1-1.png)
+![](http://psmdxhpp9.bkt.clouddn.com/webpack1/blog1-1.png)
 
 
 <p>直接引入是肯定不行的，需要在webpack.config.js中配置 <font background=#fff5f5 color=#ff502c>file-loader</font>，别忘了要  <font background=#fff5f5 color=#ff502c>npm install file-loader -D</font>。</p>
 
 
-![](http://psmdxhpp9.bkt.clouddn.com//webpack1/blog1-2.png)
+![](http://psmdxhpp9.bkt.clouddn.com/webpack1/blog1-2.png)
 
 
 <p>然后运行webpack进行打包。</p>
 
 
-![](http://psmdxhpp9.bkt.clouddn.com//webpack1/blog1-3.png)
+![](http://psmdxhpp9.bkt.clouddn.com/webpack1/blog1-3.png)
 
 
 <font background=#fff5f5 color=#ff502c>file-loader</font>会自动打包处理jpg文件，并且放到输出的目录中。
@@ -31,14 +31,14 @@
 这时候我们就需要去loader中添加一些额外的配置了。
 
 
-![](http://psmdxhpp9.bkt.clouddn.com//webpack1/blog1-4.png)
+![](http://psmdxhpp9.bkt.clouddn.com/webpack1/blog1-4.png)
 
 
 <br>
 options中，[name]代表源文件名称，[ext]代表源文件后缀，这样打包出来的文件就和原来的文件名称相同了。
 
 
-![](http://psmdxhpp9.bkt.clouddn.com//webpack1/blog1-5.png)
+![](http://psmdxhpp9.bkt.clouddn.com/webpack1/blog1-5.png)
 
 
 <br>
@@ -48,21 +48,21 @@ options中，[name]代表源文件名称，[ext]代表源文件后缀，这样�
 我们可以再给图片加一个hash值。
 
 
-![](http://psmdxhpp9.bkt.clouddn.com//webpack1/blog1-6.png)
+![](http://psmdxhpp9.bkt.clouddn.com/webpack1/blog1-6.png)
 
 
 <br>
 运行webpack打包后的结果
 
 
-![](http://psmdxhpp9.bkt.clouddn.com//webpack1/blog1-7.png)
+![](http://psmdxhpp9.bkt.clouddn.com/webpack1/blog1-7.png)
 
 
 <br>
 当然，file-loader不只可以打包jpg文件，还可以打包png等文件。
 
 
-![](http://psmdxhpp9.bkt.clouddn.com//webpack1/blog1-8.png)
+![](http://psmdxhpp9.bkt.clouddn.com/webpack1/blog1-8.png)
 
 
 <br>
@@ -70,13 +70,13 @@ options中，[name]代表源文件名称，[ext]代表源文件后缀，这样�
 我们可以在output中配置文件打包的目录，也可以在loader的options中单独配置图片的打包目录
 
 
-![](http://psmdxhpp9.bkt.clouddn.com//webpack1/blog1-9.png)
+![](http://psmdxhpp9.bkt.clouddn.com/webpack1/blog1-9.png)
 
 <br>
 运行webpack打包后的结果
 
 
-![](http://psmdxhpp9.bkt.clouddn.com//webpack1/blog1-10.png)
+![](http://psmdxhpp9.bkt.clouddn.com/webpack1/blog1-10.png)
 
 
 <br>
@@ -85,7 +85,7 @@ options中，[name]代表源文件名称，[ext]代表源文件后缀，这样�
 提到 <font background=#fff5f5 color=#ff502c>file-loader</font> 就会想到 <font background=#fff5f5 color=#ff502c>url-loader</font> ，<font background=#fff5f5 color=#ff502c>url-loader</font>可以实现 <font background=#fff5f5 color=#ff502c>file-loader</font> 的功能，那他们有什么区别呢?
 
 
-![](http://psmdxhpp9.bkt.clouddn.com//webpack1/blog1-11.png)
+![](http://psmdxhpp9.bkt.clouddn.com/webpack1/blog1-11.png)
 
 
 <br>
@@ -97,7 +97,7 @@ options中，[name]代表源文件名称，[ext]代表源文件后缀，这样�
 <br>
 <h1>5.url-loader最佳实践</h1>
 
-![](http://psmdxhpp9.bkt.clouddn.com//webpack1/blog1-12.png)
+![](http://psmdxhpp9.bkt.clouddn.com/webpack1/blog1-12.png)
 
 <br>
 意思是如果图片超过204800个字节（200kb），就使用和<font background=#fff5f5 color=#ff502c>file-loader</font>相同的方式进行打包。
