@@ -121,7 +121,7 @@ cnpm install -D webpack webpack-cli
 ![](https://user-gold-cdn.xitu.io/2019/6/11/16b46c092655ae06?w=913&h=1008&f=png&s=87557)
 
 
-<p>现在我们去手动打一个断点。</p>
+<p>现在我们去手动打一个断点。</p> 
 
 
 ![](https://user-gold-cdn.xitu.io/2019/6/11/16b46c301309fb87?w=886&h=481&f=png&s=34118)
