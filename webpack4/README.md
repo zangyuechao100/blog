@@ -62,3 +62,5 @@
 1.如何编写loader：https://github.com/zangyuechao100/blog/tree/master/webpack4/%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86/1.%E5%A6%82%E4%BD%95%E7%BC%96%E5%86%99loader
 
 2.如何编写plugin：https://github.com/zangyuechao100/blog/tree/master/webpack4/%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86/2.%E5%A6%82%E4%BD%95%E7%BC%96%E5%86%99plugin
+
+3.实现简易webpack：https://github.com/zangyuechao100/blog/tree/master/webpack4/%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86/3.%E5%AE%9E%E7%8E%B0%E7%AE%80%E6%98%93webpack
