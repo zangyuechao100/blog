@@ -2,143 +2,203 @@
 
 <p>这次学习webpack4不仅仅要会配置，记住核心API，最好还要理解一下webpack更深层次的知识，比如打包原理等等，所以可能会省略一些比较基础的内容，但是希望我可以通过此次学习掌握webpack，更好地应对以后的工作。</p>
 
-<h1>1.如何编写简单的plugin</h1>
+<h1>1.模块分析</h1>
 
-<p>首先初始化项目</p>
+<p>我们这一次会实现一个类似webpack的工具，首先来写模块分析部分。</p>
+
+<p>代码地址：</p>
+
+<p>先把目录搭好，src下有三个js文件，每个文件里面对应以下内容：</p>
+
+
+![](https://user-gold-cdn.xitu.io/2019/6/12/16b4be43a03eee0a?w=233&h=130&f=png&s=2075)
+
+
+<p>word.js</p>
+
+
+![](https://user-gold-cdn.xitu.io/2019/6/12/16b4be45941daee4?w=371&h=117&f=png&s=4415)
+
+
+<p>message.js</p>
+
+
+![](https://user-gold-cdn.xitu.io/2019/6/12/16b4be4650d82869?w=422&h=173&f=png&s=11545)
+
+
+<p>index.js</p>
+
+![](https://user-gold-cdn.xitu.io/2019/6/12/16b4be4509b5ba8b?w=457&h=128&f=png&s=7811)
+
+
+<p>现在这个代码在浏览器中是没有办法运行的，需要借助类似webpack这种工具才可以，所以我们需要借助node.js实现一个打包工具。</p>
+
+<p>和src同级，我们新建一个bundler.js。</p>
+
+<p>创建一个函数，用来分析打包入口文件，支持传入一个参数（文件路径），然后利用node读取文件内容。</p>
+
+
+![](https://user-gold-cdn.xitu.io/2019/6/12/16b4bef8f3b29d61?w=702&h=294&f=png&s=27315)
+
+
+<p>而index中引用了message.js，我们需要把引用的文件名提取出来，要借助@babel/parser分析我们的源代码。</p>
+
 
 ```
-npm init -y
+cnpm install @babel/parser --save
 ```
 
-<p>新建一个src目录，里面有一个index.js</p>
+<p>@babel/parser提供了一个parse方法，第一个参数传入文件内容，第二个参数传一个对象。</p>
 
 
-![](https://user-gold-cdn.xitu.io/2019/6/11/16b466da79354adc?w=437&h=143&f=png&s=6095)
+![](https://user-gold-cdn.xitu.io/2019/6/12/16b4bf90111a61af?w=872&h=359&f=png&s=39941)
 
 
-<p>安装webpack</p>
+<p>方法返回的对象是一个抽象语法树（AST）。</p>
+
+
+![](https://user-gold-cdn.xitu.io/2019/6/12/16b4bfa15ffb9f13?w=507&h=328&f=png&s=11279)
+
+
+<p>对象里面有一个program.body，内容是这样的：</p>
+
+
+![](https://user-gold-cdn.xitu.io/2019/6/12/16b4bfc55df6c792?w=510&h=464&f=png&s=16733)
+
+
+<p>第一个Node的type是ImportDeclaration，意思是引入声明语句，我们index.js中第一行确实是引入语句。第二个Node的type是ExpressionStatement，意思是表达式语句，我们第二行写的console.log()，确实是表达式语句。所以借助这个工具，我们就可以分析文件之间的依赖关系。</p>
+
+<p>为了找出所有的依赖关系，我们要遍历所有type是ImportDeclaration的语句，自己写会比较麻烦，还可以借助@babel/traverse</p>
 
 ```
-cnpm install -D webpack webpack-cli
+cnpm install --save @babel/traverse
 ```
 
-<p>编写webpack配置。</p>
+<p>traverse是一个函数，第一个参数接受抽象语法树，第二个参数是一个对象。</p>
 
 
-![](https://user-gold-cdn.xitu.io/2019/6/11/16b4670052b92b3a?w=614&h=369&f=png&s=22673)
+![](https://user-gold-cdn.xitu.io/2019/6/12/16b4c0469c09ca19?w=971&h=534&f=png&s=60327)
 
 
-<p>在package.json中配置命令行</p>
+<p>抽象语法树中有元素的type是ImportDeclaration时，就会执行ImportDeclaration函数，它接受的参数可以解构出一个node，它就是所有type是ImportDeclaration的元素，就是我们所有的依赖，里面哟一个source，value值就是文件名，所以我们就可以把所有文件名都存起来</p>
 
 
-![](https://user-gold-cdn.xitu.io/2019/6/11/16b467048fad5d8a?w=353&h=448&f=png&s=20708)
+![](https://user-gold-cdn.xitu.io/2019/6/12/16b4c0a09b918c98?w=492&h=395&f=png&s=15229)
 
 
-<p>现在我们想在打包结束后，在dist目录中生成一个版权文件，要怎么做呢？</p>
+<p>声明一个数组，把所有node中的soure.value都push到数组中。</p>
 
-<p>首先，在src同级目录下新建一个plugins的目录，然后在新建一个copyright-webpack-plugin.js，在这个文件里写js。</p>
 
-<p>loader导出的是一个函数，而plugin是一个类。</p>
+![](https://user-gold-cdn.xitu.io/2019/6/12/16b4c0f712b70ee9?w=1017&h=567&f=png&s=75126)
 
 
-![](https://user-gold-cdn.xitu.io/2019/6/11/16b46788e66434b2?w=554&h=304&f=png&s=15819)
+<p>这样入口分析就已经分析好了，但是这时候分析的依赖都是相对路径，我们要把它改为绝对路径，或者是相对于根路径的相对路径，这样才不会有问题，所以要借助node中的path。</p>
 
 
-<p>插件被执行的时候，会首先执行apply这个方法，它接受一个参数compiler，是webpack实例。</p>
+![](https://user-gold-cdn.xitu.io/2019/6/12/16b4c1578a1d60d9?w=799&h=137&f=png&s=21519)
 
-<p>然后在配置中使用我们的插件。</p>
 
+<p>但是我们为了方便以后开发，现在应该把绝对路径和相对路径都存好，所以把原先的数组变成对象，用以下方法存起来。</p>
 
-![](https://user-gold-cdn.xitu.io/2019/6/11/16b469b7d644280f?w=888&h=484&f=png&s=31129)
 
+![](https://user-gold-cdn.xitu.io/2019/6/12/16b4c1c097cc2d13?w=913&h=223&f=png&s=30199)
 
-<p>这也是插件使用过程中，需要new的原因。</p>
 
-<p>有时候插件可以传参，我们就可以通过constructor的参数接收。</p>
+![](https://user-gold-cdn.xitu.io/2019/6/12/16b4c1c1761cea9b?w=291&h=59&f=png&s=2576)
 
 
-![](https://user-gold-cdn.xitu.io/2019/6/11/16b469fc94e257fc?w=399&h=152&f=png&s=6530)
+<p>对象的key是相对路径，value是绝对路径。</p>
 
+<p>然后就返回入口文件名，和文件所有依赖的内容。</p>
 
 
+![](https://user-gold-cdn.xitu.io/2019/6/12/16b4c1d7027ccbb4?w=937&h=779&f=png&s=84131)
 
-![](https://user-gold-cdn.xitu.io/2019/6/11/16b46a041168cfaf?w=530&h=313&f=png&s=16873)
 
+<p>但是我们用的ES Module引入文件，浏览器无法识别这个语法，就要依赖@babel/core。</p>
 
+```
+cnpm install --save @babel/core
+```
 
-![](https://user-gold-cdn.xitu.io/2019/6/11/16b46a0f9f947a4a?w=383&h=210&f=png&s=9207)
+<p>@babel/core提供了一个方法，transformFromAst，可以把抽象语法树转化成浏览器可以运行的代码。</p>
 
 
-<p>再回头来写插件。</p>
+![](https://user-gold-cdn.xitu.io/2019/6/13/16b50ead809ccced?w=432&h=122&f=png&s=6783)
 
-<p>compiler有许多钩子，compiler.hooks.emit代表生成资源到output目录之前的钩子。因为这是一个异步操作，所以后面跟着一个tapAsync</p>
 
+<p>传入的参数中还可以配置ES6转ES5的插件，所以要先安装一下@babel/preset-env。</p>
 
-![](https://user-gold-cdn.xitu.io/2019/6/11/16b46af12b5aa9c3?w=958&h=368&f=png&s=26239)
 
+```
+cnpm install --save @babel/preset-env
+```
 
-<p>compilation里面有一个assets，包括本次打包生成的资源，现在已经有一个main.js，我们再添加一个copyright.txt，source代表文件中的内容，size代表文件大小，然后最后要调用cb()这个函数。</p>
+<p>函数会返回一个对象，里面有一个code属性，code属性中就是我们浏览器可以运行的代码。</p>
 
-<p>查看打包生成的文件。</p>
 
+![](https://user-gold-cdn.xitu.io/2019/6/13/16b50efb900dbfa6?w=569&h=120&f=png&s=6203)
 
-![](https://user-gold-cdn.xitu.io/2019/6/11/16b46b319d79e750?w=226&h=219&f=png&s=6617)
 
+<p>最后返回我们分析的结果。</p>
 
-![](https://user-gold-cdn.xitu.io/2019/6/11/16b46b32aaef4410?w=311&h=137&f=png&s=2162)
 
+![](https://user-gold-cdn.xitu.io/2019/6/13/16b50f04e90a4686?w=969&h=929&f=png&s=98022)
 
-<p>如果写同步，就需要这么写。</p>
 
+![](https://user-gold-cdn.xitu.io/2019/6/13/16b50f1794f7067c?w=568&h=104&f=png&s=8009)
 
-![](https://user-gold-cdn.xitu.io/2019/6/11/16b46c28c84315ec?w=925&h=448&f=png&s=34089)
 
+<p>返回的结果意思是：入口文件是index.js；引用的依赖是message.js，地址是src/message.js；浏览器中可以运行的代码是code中的内容。</p>
 
-<p>同步的钩子后面只接tap就可以了，并且不用手动调用cb。</p>
+<h1>2.依赖图谱</h1>
 
+<p>我们现在只分析了入口文件的依赖，接下来我们要开始分析其他依赖，从message开始，一层一层把所有依赖都分析完。</p>
 
-<p>开发过程中，我们怎么快速知道compiler里面都包括什么内容？可以开启调试模式。</p>
+<p>我们再创建一个函数，用来制作依赖图谱，利用类似递归的方式，调用moduleAnalyser逐层分析依赖内容，并把它们都放到一个数组中。</p>
 
 
-![](https://user-gold-cdn.xitu.io/2019/6/11/16b46b9438a44c85?w=629&h=132&f=png&s=9215)
+![](https://user-gold-cdn.xitu.io/2019/6/13/16b510e2633fa240?w=1095&h=476&f=png&s=54681)
 
 
-<p>其实这个命令和npm run build没有区别，但是我们用node就可以传递参数。</p>
+<p>最后生成的数组。</p>
 
 
-![](https://user-gold-cdn.xitu.io/2019/6/11/16b46beb22010500?w=865&h=142&f=png&s=11339)
+![](https://user-gold-cdn.xitu.io/2019/6/13/16b510e35d56c1dc?w=566&h=293&f=png&s=23155)
 
 
-<p>加完参数后，运行npm run debug，打开浏览器，打开控制台，会发现多了一个webpack操作按钮。</p>
+<p>然后我们把它整合成一个对象，用路径作为key，依赖和代码作为value，并且返回这个对象。</p>
 
 
-![](https://user-gold-cdn.xitu.io/2019/6/11/16b46c07b069a09c?w=366&h=75&f=png&s=4449)
+![](https://user-gold-cdn.xitu.io/2019/6/13/16b5113955f008b1?w=1121&h=704&f=png&s=74660)
 
 
-<p>点击后会出现webpack打包过程的调试界面。</p>
+<p>对象的内容。</p>
 
 
-![](https://user-gold-cdn.xitu.io/2019/6/11/16b46c092655ae06?w=913&h=1008&f=png&s=87557)
+![](https://user-gold-cdn.xitu.io/2019/6/13/16b5112c2f5a3dbe?w=572&h=284&f=png&s=21423)
 
 
-<p>现在我们去手动打一个断点。</p> 
+<h1>3.生成代码</h1>
 
+<p>拿到依赖图谱，现在要开始生成浏览器可以运行的代码了。</p>
 
-![](https://user-gold-cdn.xitu.io/2019/6/11/16b46c301309fb87?w=886&h=481&f=png&s=34118)
+<p>先看生成的代码中，存在require和exports两个方法，但是浏览器中没有这两个方法，所以我们要先定义这两个方法，然后把生成的代码片段利用闭包的形式执行。</p>
 
+<p>require函数中，通过传入路径拿到对应的代码，利用eval()执行，如果require中有依赖，继续执行require时拿到的就是相对路径，需要转成绝对路径，直接去我们之前创建的对象中取就可以。</p>
 
-<p>然后重新执行npm run debug，执行相同的步骤。</p>
+<p>exports是一个空对象即可，这样导出的内容会被存到exports中。</p>
 
-<p>默认会处在第一个断点，然后执行下一个断点就会来到我们手动打的断点中。</p>
 
+![](https://user-gold-cdn.xitu.io/2019/6/13/16b513d75b71ac4b?w=1306&h=716&f=png&s=88247)
 
-![](https://user-gold-cdn.xitu.io/2019/6/11/16b46c59223fa47b?w=537&h=493&f=png&s=19075)
 
+<p>然后把生成的代码格式化一下，复制到浏览器中执行。</p>
 
-<p>这样就可以快速看到compilation包括什么内容了。</p>
 
+![](https://user-gold-cdn.xitu.io/2019/6/13/16b513e388ab06f5?w=1884&h=324&f=png&s=46130)
 
-![](https://user-gold-cdn.xitu.io/2019/6/11/16b46c5e11429fc8?w=369&h=318&f=png&s=17844)
 
+<p>就打印出say hello了。</p>
 
-<p>具体的还是需要去官网，对照着看才可以深入使用。</p>
+<p>这样，我们就已经实现了一个简易的webpack打包工具了，具体代码可以去我的github仓库里面看。</p>
