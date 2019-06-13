@@ -8,6 +8,8 @@
 
 <p>代码地址：</p>
 
+[代码仓库](https://github.com/zangyuechao100/blog/tree/master/webpack4/%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86/3.%E5%AE%9E%E7%8E%B0%E7%AE%80%E6%98%93webpack/bundler)
+
 <p>先把目录搭好，src下有三个js文件，每个文件里面对应以下内容：</p>
 
 
