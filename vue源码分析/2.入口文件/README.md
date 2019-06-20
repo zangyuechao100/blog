@@ -30,5 +30,5 @@
 
 
 <p>initGlobalAPI定义在 src/core/global-api/index.js，这里的内容也会在后面的笔记中详细的列出。</p>
-
+ 
 <p>所以Vue本质上就是一个用 Function 实现的 Class，然后它的原型 prototype 以及它本身都扩展了一系列的方法和属性，具体的内容我们后面再详细介绍。</p>
