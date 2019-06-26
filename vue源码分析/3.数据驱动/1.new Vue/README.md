@@ -2,9 +2,9 @@
 
 <p>这几节最后应该合并起来看，串联后是实现数据驱动的代码，写好了会补上链接</p>
 
-[一、VUE源码笔记之new Vue](https://juejin.im/post/5d13095ee51d45109b01b1c7)
+[一、VUE源码笔记之new Vue](https://github.com/zangyuechao100/blog/tree/master/vue%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/3.%E6%95%B0%E6%8D%AE%E9%A9%B1%E5%8A%A8/1.new%20Vue)
 <br>
-[二、VUE源码笔记之$mount实例挂载](https://juejin.im/post/5d133d99e51d45775e33f591)
+[二、VUE源码笔记之$mount实例挂载](https://github.com/zangyuechao100/blog/tree/master/vue%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/3.%E6%95%B0%E6%8D%AE%E9%A9%B1%E5%8A%A8/2.%24mount%E5%AE%9E%E4%BE%8B%E6%8C%82%E8%BD%BD)
 
 
 <p>本节的内容是：了解new Vue发生了什么。</p>
