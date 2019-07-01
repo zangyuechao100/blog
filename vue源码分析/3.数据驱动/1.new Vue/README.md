@@ -6,7 +6,7 @@
 <br>
 [二、VUE源码笔记之$mount实例挂载](https://github.com/zangyuechao100/blog/tree/master/vue%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/3.%E6%95%B0%E6%8D%AE%E9%A9%B1%E5%8A%A8/2.%24mount%E5%AE%9E%E4%BE%8B%E6%8C%82%E8%BD%BD)
 <br>
-[三、VUE源码笔记之render](https://juejin.im/post/5d19c9a0e51d45775746b987)
+[三、VUE源码笔记之render](https://github.com/zangyuechao100/blog/tree/master/vue%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/3.%E6%95%B0%E6%8D%AE%E9%A9%B1%E5%8A%A8/3.render)
 
 
 <p>本节的内容是：了解new Vue发生了什么。</p>
