@@ -220,7 +220,7 @@ result.then(function (img) {
 
 <h1>4.ES6其他功能</h1>
 <p>这些功能可以去网上查阅博客，这里就简单的写一下使用语法。</p>
-<h2>4.1 let/const<h2>
+<h2>4.1 let/const</h2>
 
 ```
 let i = 10;
@@ -230,7 +230,7 @@ const i = 10;
 i = 100; // 报错
 ```
 
-<h2>4.2 多行字符串/模板变量<h2>
+<h2>4.2 多行字符串/模板变量</h2>
 
 ```
 const name = 'zs';
@@ -244,7 +244,7 @@ let html = `
 console.log(html)
 ```
 
-<h2>4.3 解构赋值<h2>
+<h2>4.3 解构赋值</h2>
 
 ```
 const obj = {
@@ -261,7 +261,7 @@ const [x, y, z] = arr;
 console.log(x, y, z);
 ```
 
-<h2>4.4 块级作用域<h2>
+<h2>4.4 块级作用域</h2>
 
 ```
 var obj = {a: 1, b: 2};
@@ -278,7 +278,7 @@ for (let item in obj) {
 console.log(item); // undefined
 ```
 
-<h2>4.5 函数默认参数<h2>
+<h2>4.5 函数默认参数</h2>
 
 ```
 function sayName (name = 'zs') {
